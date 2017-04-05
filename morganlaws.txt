@@ -1,0 +1,89 @@
+/1) Can you restate the conditional more simply?
+if ( (isMichaelPhelps || isMerman) && (isMichaelPhelps || hasGills) )
+  winGoldMedals();
+--------------
+if(isMichaelPhelps || (isMerman&& hasGills))
+winGoldMedals();
+//////////////////////////////////////////////////////////////
+//2) Can you restate the conditional to use only
+//one negation?
+if (!rich && !happy)
+    killSelf()
+else
+    liveOn();
+---------------
+if (! (rich || happy))
+ killSelf()
+else
+    liveOn();
+/////////////////////////////////////////////////////////////////
+
+//3) Camn you restate the condition to use two negations
+//and be more legible?
+if (!(urgent && important))
+    usePostOfice();
+else
+    useFedex();
+-------------------------------------------------------
+if (!urgent || !important )
+  usePostOfice();
+else
+    useFedex();
+
+////////////////////////////////////////////////////////////////
+//4) Under which circumstances will doSomething run?
+if (x > 5 && x <= -5)
+    doSomething();
+
+
+   is not going to run
+----------------------------------------------------------------
+//4b) Under which circumstances will doSomething run?
+if (x > 5 || x <= -5)
+    doSomething();
+is going to run
+
+//////////////////////////////////////////////////////////////////
+
+//5) Can you restate the conditional to use no negations?
+if ( !(x > 10 && y < 15))
+    alert("You got it!");
+else
+    prompt("What you need?");
+------------------------------------------------------------------
+    if ( x<=10  || y>=15)
+  alert("You got it!");
+else
+    prompt("What you need?");
+
+/////////////////////////////////////////////////////////////////
+//6) Can you restate the conditional to use only one negation?
+if ( !(x < 10) || y <= 10 || z <= 25 || !dead ) {
+    console.log("You know your DeMorgan's Laws");
+}
+------------------------------------------------------------------
+if(!((x<10)&&dead)  || y <= 10 || z <= 25)
+    console.log("You know your DeMorgan's Laws");
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+//7) Can you distributive e the negation across the expression in parens?
+if (!(!alive || distance > 1000 || trapped || enemies < 0)) {
+    alert("game goes on");
+}
+
+--------------------------------------------------------------------------
+if (!(!alive)&& !distance>100 && !trapped && !enemies<0)
+    alert("game goes on");
+}
+
+////////////////////////////////////////////////////////////////////////////
+//8) Can you distribute the negation across the expression in parens?
+if (!(dead && level < 99 && world == "Earth")) {
+    alert ("Life goes on");
+}
+
+--------------------------------------------------------------------------
+if (!dead || !level<99 || !world== “Earth”)   alert ("Life goes on");
+}
